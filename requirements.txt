@@ -1,3 +1,4 @@
 websockets
 fake-useragent
 tls-client
+typing_extensions
