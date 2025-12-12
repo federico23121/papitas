@@ -1,4 +1,7 @@
-websockets
-fake-useragent
-tls-client
-typing_extensions
+tls-client==0.4.1
+typing_extensions==4.12.2
+requests==2.31.0
+urllib3==2.2.1
+certifi==2024.2.2
+charset-normalizer==3.3.2
+idna==3.7
