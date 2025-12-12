@@ -53,10 +53,9 @@ def clean_channel_name(name):
 def build_session():
     return tls_client.Session(
         client_identifier="chrome_131",
-        random_tls_extension_order=True,
-        verify=False,  # <--- cambiar a verify=False
-        ja3_string="771,4865-4866-4867-49195-49196-52392-52393-49199-49200-158-159-49171-49172-49157-49158-49161-49162,23-65281-10-11-35-16-5-18-51-45,29-23-24,0"
+        random_tls_extension_order=True
     )
+
 
 
 
