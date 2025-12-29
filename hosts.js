@@ -1,4 +1,3 @@
-// hosts.js
 const API = require("./src/index")();
 const { Room } = API;
 const EnglishLanguage = require("./languages/englishLanguage");
@@ -81,10 +80,17 @@ const roomNames = [
     "🟢 KICK: agruck ON 🟢"
 ];
 
+// LISTA DE GEOS SOLICITADAS
+const geoList = [
+    { lat: -34.5082740783691, lon: -58.427734375, flag: "AR" },
+    { lat: -34.5082740783691, lon: -58.427734375, flag: "AR" },
+    { lat: -34.5429039001465, lon: -58.4013328552246, flag: "AR" },
+    { lat: -34.6300010681152, lon: -58.3814010620117, flag: "AR" },
+    { lat: -34.7786636352539, lon: -58.4580917358398, flag: "AR" }
+];
+
 const maxPlayersList = [12, 12, 12, 12, 12];
 const fakePlayersList = [9, 9, 9, 9, 9];
-
-const geo = { lat: -34.613151550293, lon: -58.3772315979004, flag: "AR" };
 
 /* ---------- Env / selección por index ---------- */
 
@@ -96,6 +102,9 @@ const webhookUrl = "https://discord.com/api/webhooks/1365562720862208091/pgiPEDf
 const roomName = roomNames[jobIndex % roomNames.length];
 const maxPlayers = maxPlayersList[jobIndex % maxPlayersList.length];
 const fakePlayers = fakePlayersList[jobIndex % fakePlayersList.length];
+
+// SELECCIÓN DE GEO SEGÚN EL INDEX
+const geo = geoList[jobIndex % geoList.length];
 
 if (!token) {
     console.error("❌ No se encontró token (JOB_ID / HAXBALL_TOKEN / RECAPTCHA_TOKEN).");
