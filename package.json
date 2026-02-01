@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "node-fetch": "^2.7.0",
+    "node-datachannel": "^0.25.0",
     "node-haxball": "^1.2.0"
   },
   "devDependencies": {
