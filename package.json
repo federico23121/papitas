@@ -12,6 +12,7 @@
     "node-fetch": "^2.7.0",
     "node-datachannel": "^0.25.0",
     "node-haxball": "^1.2.0"
+    "axios": "^1.6.0",
   },
   "devDependencies": {
     "esbuild": "^0.24.0",
