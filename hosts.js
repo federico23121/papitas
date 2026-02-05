@@ -80,7 +80,7 @@ const geoList = [
     { lat: -26.8326835632324, lon: -65.2039566040039, flag: "AR" }
 ];
 
-const maxPlayersList = [1, 1, 1, 1, 1];
+const maxPlayersList = [18, 13, 15, 21, 29];
 const fakePlayersList = [30, 30, 30, 30, 30];
 
 /* ---------- Env / selección por index ---------- */
