@@ -143,16 +143,7 @@ Room.create(
                 sendDiscordPlayer(webhookUrl, playerObj, roomName);
 
                 const mensajes = [
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD",
-                    "UNITE AL DISCORD PARA POSTULARTE: https://discord.gg/Q3AWejsSxD"
+                    "UNITE AL DISCORD: https://discord.gg/Fht2WhVMN"
                 ];
 
                 let i = 0;
