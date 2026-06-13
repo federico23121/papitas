@@ -17,34 +17,32 @@ jobs:
       max-parallel: 15
       matrix:
         include:
-          - recaptcha_token: "thr1.AAAAAGmQvoRtNyf2pzXDrw.Hl67H9b1C7I"
+          - recaptcha_token: "thr1.AAAAAGothvpfX3ca1xZ_AA.fQxHKHaig7c"
             index: 0
-          - recaptcha_token: "thr1.AAAAAGmQvoz89A7ZlotBUg.hxNWzvYp7ZM"
+          - recaptcha_token: "thr1.AAAAAGothw2B6rBYCy3DTw.eTAdsBa7QTA"
             index: 1
-          - recaptcha_token: "thr1.AAAAAGmQvpFMLKmuQNj6bA.K3EHpqnyboI"
+          - recaptcha_token: "thr1.AAAAAGothyKbtngHMoYYiw.4gYNVvQJnt4"
             index: 2
-          - recaptcha_token: "thr1.AAAAAGmQv0s5MgsFfpc8vA.xvnJgAjhuIc"
+          - recaptcha_token: "thr1.AAAAAGothzsw2rYxlPFNkg.GT73bV7jFb4"
             index: 3
-          - recaptcha_token: "thr1.AAAAAGmQv1-rzfs96dVFzw.R-SnjgR2ksk"
+          - recaptcha_token: "thr1.AAAAAGoth08f_aQqpD8RgA.zyxUrojlXgE"
             index: 4
-          - recaptcha_token: "thr1.AAAAAGmQv3ENhq5IAQdKxQ.ko6NrdG9oJE"
+          - recaptcha_token: "thr1.AAAAAGoth2THqMJoOzO4LQ.YtUvzxHZ31M"
             index: 5
-          - recaptcha_token: "thr1.AAAAAGmQv4uWIRF0KNC-7g.a4NnVGwxXl4"
+          - recaptcha_token: "thr1.AAAAAGoth3Yi50qvioKB3g.pE7ZTcyUfGY"
             index: 6
-          - recaptcha_token: "thr1.AAAAAGmQv5gmdBK58HhVoA.Et7mU5c1UkI"
+          - recaptcha_token: "thr1.AAAAAGoth4jZl_hLXmiBjQ.GAYuXdJZsHw"
             index: 7
-          - recaptcha_token: "thr1.AAAAAGmQv6KBkIzCmNFCTA.LflrugJoVAM"
+          - recaptcha_token: "thr1.AAAAAGoth5mNxmAy7fEmCw.aaBtnGGlsp0"
             index: 8
-          - recaptcha_token: "thr1.AAAAAGmQv8GNJw0_U7SxVQ.ryOREQH2sEQ"
+          - recaptcha_token: "thr1.AAAAAGoth6pfBAO74wgAkA.V0WC8LPUxVY"
             index: 9
-          - recaptcha_token: "thr1.AAAAAGmQv8Eq2cDRgQAouQ.uysCCSP07Ek"
+          - recaptcha_token: "thr1.AAAAAGoth8Frd8JF_ylBrQ.Q0z-D1PtZoE"
             index: 10
-          - recaptcha_token: "thr1.AAAAAGmQv9f7cGW0xlal2g.H4yHEJv8QUE"
+          - recaptcha_token: "thr1.AAAAAGoth-VzXEDGyj4aZw.eJUaqiKKUDc"
             index: 11
-          - recaptcha_token: "thr1.AAAAAGmQv_TB2VeEnSY5gg.hZiS2S1jgpc"
+          - recaptcha_token: "thr1.AAAAAGoth_k5rHLjf_rhzg.AhG7pUkoonI"
             index: 12
-          - recaptcha_token: "thr1.AAAAAGmQv_WCn0Fq5gdrpA.bJlqGTeiUbU"
-            index: 13
 
     steps:
       - name: 🧩 Checkout repo
