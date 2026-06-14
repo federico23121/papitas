@@ -65,25 +65,18 @@ async function sendDiscordRoomLink(webhookUrl, roomLink, roomName) {
     await sendDiscordRaw(webhookUrl, payload);
 }
 
-/* ---------- Config (modificable / rotativo por INDEX) ---------- */
 
 const roomNames = [
-  "⚠️ 𝗞𝗜𝗖𝗞.𝗖𝗢𝗠/𝗖𝗭𝗘𝗥𝗥𝗢 ⚠️ [ 𝗕𝘆 𝗧𝗲𝗹𝗲𝗲𝘀𝗲 ]"
+  "➔ KICK.COM/CZERRO ➔ By TLS"
 ];
 
-// LISTA DE GEOS SOLICITADAS
 const geoList = [
-    { lat: -28.6874008178711, lon: -61.6473999023438, flag: "AR" },
-    { lat: -32.9477348327637, lon: -60.6307067871094, flag: "AR" },
-    { lat: -31.4293041229248, lon: -64.1662750244141, flag: "AR" },
-    { lat: -34.6300010681152, lon: -58.3814010620117, flag: "AR" },
-    { lat: -26.8326835632324, lon: -65.2039566040039, flag: "AR" }
+        { lat: -34.5670013427734, lon: -58.4669990539551, flag: "XK" }
 ];
 
-const maxPlayersList = [2, 2, 2, 2, 2];
-const fakePlayersList = [14, 14, 14, 14, 14];
+const maxPlayersList = [9, 9, 9, 9, 9];
+const fakePlayersList = [11, 11, 11, 11, 11];
 
-/* ---------- Env / selección por index ---------- */
 
 const jobIndex = Number.parseInt(process.env.INDEX || "0", 10);
 const token = process.env.JOB_ID || process.env.HAXBALL_TOKEN || process.env.RECAPTCHA_TOKEN;
@@ -104,7 +97,6 @@ if (!token) {
 
 console.log(`🚀 Creando sala: ${roomName} | MaxPlayers: ${maxPlayers} | FakePlayers: ${fakePlayers} | Geo: ${JSON.stringify(geo)}`);
 
-/* ---------- Crear sala (node-haxball moderno) ---------- */
 
 Room.create(
 {
