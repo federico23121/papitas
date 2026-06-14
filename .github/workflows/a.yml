@@ -17,47 +17,49 @@ jobs:
       max-parallel: 15
       matrix:
         include:
-          - recaptcha_token: "thr1.AAAAAGothvpfX3ca1xZ_AA.fQxHKHaig7c"
+          - recaptcha_token: "thr1.AAAAAGou-LQEsJTIU7nibA.F3_F3jGtsyo"
             index: 0
-          - recaptcha_token: "thr1.AAAAAGothw2B6rBYCy3DTw.eTAdsBa7QTA"
+          - recaptcha_token: "thr1.AAAAAGou-MmCzij3v6LHCw.wFYnChyeG9Y"
             index: 1
-          - recaptcha_token: "thr1.AAAAAGothyKbtngHMoYYiw.4gYNVvQJnt4"
+          - recaptcha_token: "thr1.AAAAAGou-NzlDi2tAHBB1w.NkHfPCDitTE"
             index: 2
-          - recaptcha_token: "thr1.AAAAAGothzsw2rYxlPFNkg.GT73bV7jFb4"
+          - recaptcha_token: "thr1.AAAAAGou-PGCg70f0ZT7vw.tcmz8-2BAh4"
             index: 3
-          - recaptcha_token: "thr1.AAAAAGoth08f_aQqpD8RgA.zyxUrojlXgE"
+          - recaptcha_token: "thr1.AAAAAGou-RxFaQ02-vYZLw.jptZqeI443Q"
             index: 4
-          - recaptcha_token: "thr1.AAAAAGoth2THqMJoOzO4LQ.YtUvzxHZ31M"
+          - recaptcha_token: "thr1.AAAAAGou-W6h7gsNLriUnQ.nPVORnmRMEA"
             index: 5
-          - recaptcha_token: "thr1.AAAAAGoth3Yi50qvioKB3g.pE7ZTcyUfGY"
+          - recaptcha_token: "thr1.AAAAAGou-Ycg_O-SHv0pRw.EMfWYGwi6n0"
             index: 6
-          - recaptcha_token: "thr1.AAAAAGoth4jZl_hLXmiBjQ.GAYuXdJZsHw"
+          - recaptcha_token: "thr1.AAAAAGou-Z2RbbYKcvkYpQ.JTZf6twkvWQ"
             index: 7
-          - recaptcha_token: "thr1.AAAAAGoth5mNxmAy7fEmCw.aaBtnGGlsp0"
+          - recaptcha_token: "thr1.AAAAAGou-d0TMZcz0gRynw.hTX7wWdnpes"
             index: 8
-          - recaptcha_token: "thr1.AAAAAGoth6pfBAO74wgAkA.V0WC8LPUxVY"
+          - recaptcha_token: "thr1.AAAAAGou-gAFQ4hdIyqEHQ.rpJHn39a0lQ"
             index: 9
-          - recaptcha_token: "thr1.AAAAAGoth8Frd8JF_ylBrQ.Q0z-D1PtZoE"
+          - recaptcha_token: "thr1.AAAAAGou-ha4_Ly7wli6Uw.cEAAUViPCZ0"
             index: 10
-          - recaptcha_token: "thr1.AAAAAGoth-VzXEDGyj4aZw.eJUaqiKKUDc"
+          - recaptcha_token: "thr1.AAAAAGou-iu4Xn3yyUXojA.MBiglQFl2m4"
             index: 11
-          - recaptcha_token: "thr1.AAAAAGoth_k5rHLjf_rhzg.AhG7pUkoonI"
+          - recaptcha_token: "thr1.AAAAAGou-kCZat6EzNDqTQ.bZX8WqHRnIA"
             index: 12
+          - recaptcha_token: "thr1.AAAAAGou-ldK2EcXLl1akg.z5HOFNO8CpM"
+            index: 13
+          - recaptcha_token: "thr1.AAAAAGou-nNtbKoqtAeidQ.y-U11ixq9v4"
+            index: 14
 
     steps:
       - name: 🧩 Checkout repo
         uses: actions/checkout@v4
 
-      - name: 🧹 Limpiar entorno previo
-        run: rm -rf node_modules package-lock.json
-
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: 📦 Instalar dependencias
-        run: npm install
+        run: npm ci
 
       - name: 🚀 Ejecutar host
         run: node hosts.js
