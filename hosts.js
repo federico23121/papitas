@@ -65,18 +65,21 @@ async function sendDiscordRoomLink(webhookUrl, roomLink, roomName) {
     await sendDiscordRaw(webhookUrl, payload);
 }
 
+/* ---------- Config (modificable / rotativo por INDEX) ---------- */
 
 const roomNames = [
-  "➔ KICK.COM/CZERRO ➔ By TLS"
+    "IP de yunny 181.116.56.51 :("
 ];
 
+// LISTA DE GEOS SOLICITADAS
 const geoList = [
-        { lat: -34.5670013427734, lon: -58.4669990539551, flag: "XK" }
+     { lat: -34.9212608337402, lon: -57.9544181823731, flag: "AR" }
 ];
 
 const maxPlayersList = [9, 9, 9, 9, 9];
-const fakePlayersList = [11, 11, 11, 11, 11];
+const fakePlayersList = [11];
 
+/* ---------- Env / selección por index ---------- */
 
 const jobIndex = Number.parseInt(process.env.INDEX || "0", 10);
 const token = process.env.JOB_ID || process.env.HAXBALL_TOKEN || process.env.RECAPTCHA_TOKEN;
@@ -97,6 +100,7 @@ if (!token) {
 
 console.log(`🚀 Creando sala: ${roomName} | MaxPlayers: ${maxPlayers} | FakePlayers: ${fakePlayers} | Geo: ${JSON.stringify(geo)}`);
 
+/* ---------- Crear sala (node-haxball moderno) ---------- */
 
 Room.create(
 {
@@ -127,7 +131,6 @@ Room.create(
             if (webhookUrl) sendDiscordRoomLink(webhookUrl, roomLink, roomName);
         };
 
-        /* 🔥 Mensajes estilo TIC TAC Teleese COME BACK SOON */
         room.onPlayerJoin = (playerObj) => {
             try {
 
@@ -135,7 +138,7 @@ Room.create(
                 sendDiscordPlayer(webhookUrl, playerObj, roomName);
 
                 const mensajes = [
-                    "UNITE AL DISCORD: https://discord.gg/Fht2WhVMN"
+                    "Que triste :("
                 ];
 
                 let i = 0;
@@ -180,3 +183,4 @@ Room.create(
     }
 }
 );
+
