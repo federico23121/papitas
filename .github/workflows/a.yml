@@ -1,4 +1,4 @@
-name: Host - Recaptcha Rooms
+name: Host - Recaptcha Rooms - Group 2 - Restante
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: haxball-recaptcha-hosts
+  group: haxball-recaptcha-hosts-restante
   cancel-in-progress: false
 
 jobs:
@@ -14,43 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 15
+      max-parallel: 5
       matrix:
         include:
-          - recaptcha_token: "thr1.AAAAAGou-LQEsJTIU7nibA.F3_F3jGtsyo"
-            index: 0
-          - recaptcha_token: "thr1.AAAAAGou-MmCzij3v6LHCw.wFYnChyeG9Y"
-            index: 1
-          - recaptcha_token: "thr1.AAAAAGou-NzlDi2tAHBB1w.NkHfPCDitTE"
-            index: 2
-          - recaptcha_token: "thr1.AAAAAGou-PGCg70f0ZT7vw.tcmz8-2BAh4"
-            index: 3
-          - recaptcha_token: "thr1.AAAAAGou-RxFaQ02-vYZLw.jptZqeI443Q"
-            index: 4
-          - recaptcha_token: "thr1.AAAAAGou-W6h7gsNLriUnQ.nPVORnmRMEA"
-            index: 5
-          - recaptcha_token: "thr1.AAAAAGou-Ycg_O-SHv0pRw.EMfWYGwi6n0"
-            index: 6
-          - recaptcha_token: "thr1.AAAAAGou-Z2RbbYKcvkYpQ.JTZf6twkvWQ"
-            index: 7
-          - recaptcha_token: "thr1.AAAAAGou-d0TMZcz0gRynw.hTX7wWdnpes"
-            index: 8
-          - recaptcha_token: "thr1.AAAAAGou-gAFQ4hdIyqEHQ.rpJHn39a0lQ"
-            index: 9
-          - recaptcha_token: "thr1.AAAAAGou-ha4_Ly7wli6Uw.cEAAUViPCZ0"
-            index: 10
-          - recaptcha_token: "thr1.AAAAAGou-iu4Xn3yyUXojA.MBiglQFl2m4"
-            index: 11
-          - recaptcha_token: "thr1.AAAAAGou-kCZat6EzNDqTQ.bZX8WqHRnIA"
-            index: 12
-          - recaptcha_token: "thr1.AAAAAGou-ldK2EcXLl1akg.z5HOFNO8CpM"
-            index: 13
-          - recaptcha_token: "thr1.AAAAAGou-nNtbKoqtAeidQ.y-U11ixq9v4"
-            index: 14
+          - recaptcha_token: "thr1.AAAAAGo1T3mjQ50ICVQebQ.tFFQJhMe1to"
+            index: 15
+          - recaptcha_token: "thr1.AAAAAGo1T4TVkcTAftsQJQ.8fTvU4Cch8k"
+            index: 16
+          - recaptcha_token: "thr1.AAAAAGo1T5bJfwyYyshHDQ.5MoFqKyqfCk"
+            index: 17
+          - recaptcha_token: "thr1.AAAAAGo1T6PNlafSTN5Zwg.baU0x-UNHdo"
+            index: 18
+          - recaptcha_token: "thr1.AAAAAGo1T7aFH-ATMMqJ_Q.1j5VbA4Ywbk"
+            index: 19
 
     steps:
       - name: 🧩 Checkout repo
         uses: actions/checkout@v4
+
+      - name: 🧹 Limpiar entorno previo
+        run: rm -rf node_modules package-lock.json
 
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
