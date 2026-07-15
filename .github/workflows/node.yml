@@ -1,13 +1,46 @@
-name: Ejecutar Bot de Haxball
+name: Ejecutar Bot de Haxball (200 Instancias)
 
 on:
-  push:
-    branches: [ "main", "master" ]
   workflow_dispatch:
+    inputs:
+      room_id:
+        description: 'ID de la sala'
+        required: true
+        default: '-Rh4xBAYzkQ'
+      room_password:
+        description: 'Contraseña de la sala'
+        required: false
+        default: '#FFC'
+      player_name:
+        description: 'Nombre base del bot'
+        required: true
+        default: 'TLS-Bot'
+      player_avatar:
+        description: 'Avatar del bot'
+        required: true
+        default: '👽'
 
 jobs:
-  run-haxball:
+  # Job inicial para generar una lista de 0 a 199 de forma dinámica
+  generate-matrix:
     runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps:set-matrix.outputs.ids }}
+    steps:
+      - id: set-matrix
+        run: |
+          # Genera un array JSON del 0 al 199
+          IDS=$(node -e "echo(JSON.stringify(Array.from({length: 200}, (_, i) => i)))")
+          echo "ids=$IDS" >> $GITHUB_OUTPUT
+
+  # Este job se va a duplicar y ejecutar 200 veces en paralelo
+  run-haxball:
+    needs: generate-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Si una instancia falla, las otras 199 siguen corriendo
+      matrix:
+        instance: ${{ fromJson(needs.generate-matrix.outputs.ids) }}
 
     steps:
     - name: Descargar código fuente
@@ -21,12 +54,11 @@ jobs:
     - name: Instalar node-haxball
       run: npm install github:wxyz-abcd/node-haxball
 
-    - name: Ejecutar Bot
-      timeout-minutes: 2
-      # Acá definimos las variables de entorno que leerá el bot
+    - name: Ejecutar Instancia del Bot
       env:
-        ROOM_ID: "-Rh4xBAYzkQ"
-        ROOM_PASSWORD: ${{ secrets.ROOM_PASSWORD }} # Usamos un Secret para la contraseña
-        PLAYER_NAME: "Teleese-Bot"
-        PLAYER_AVATAR: "🤖"
+        ROOM_ID: ${{ github.event.inputs.room_id }}
+        ROOM_PASSWORD: ${{ github.event.inputs.room_password }}
+        PLAYER_NAME: ${{ github.event.inputs.player_name }}
+        PLAYER_AVATAR: ${{ github.event.inputs.player_avatar }}
+        INSTANCE_ID: ${{ matrix.instance }}
       run: node bots.js
