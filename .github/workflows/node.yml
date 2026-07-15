@@ -25,12 +25,12 @@ jobs:
   generate-matrix:
     runs-on: ubuntu-latest
     outputs:
-      ids: ${{ steps:set-matrix.outputs.ids }}
+      ids: ${{ steps.set-matrix.outputs.ids }}
     steps:
       - id: set-matrix
         run: |
-          # Genera un array JSON del 0 al 199
-          IDS=$(node -e "echo(JSON.stringify(Array.from({length: 200}, (_, i) => i)))")
+          # Genera un array JSON del 0 al 199 usando console.log
+          IDS=$(node -e "console.log(JSON.stringify(Array.from({length: 200}, (_, i) => i)))")
           echo "ids=$IDS" >> $GITHUB_OUTPUT
 
   # Este job se va a duplicar y ejecutar 200 veces en paralelo
@@ -38,7 +38,7 @@ jobs:
     needs: generate-matrix
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # Si una instancia falla, las otras 199 siguen corriendo
+      fail-fast: false # Si una instancia falla, las otras siguen corriendo
       matrix:
         instance: ${{ fromJson(needs.generate-matrix.outputs.ids) }}
 
