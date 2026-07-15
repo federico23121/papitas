@@ -1,6 +1,8 @@
-const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
+// Asignamos la inicialización a la constante API y desestructuramos lo que necesitamos
+const API = require("node-haxball")();
+const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = API;
 
-// Idioma nativo de la API para evitar errores de módulos faltantes
+// Ahora API existe y no va a tirar ReferenceError
 const EnglishLanguage = Language.English || Language; 
 if (API && API.Language) {
   API.Language.current = new EnglishLanguage(API);
